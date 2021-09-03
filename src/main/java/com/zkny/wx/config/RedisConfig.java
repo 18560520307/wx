@@ -1,10 +1,8 @@
-package com.noah.build.config;
+package com.zkny.wx.config;
 
 import com.alibaba.fastjson.parser.ParserConfig;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.spring.FastJsonRedisSerializer;
-import com.noah.build.servletlistener.RedisMessageListener;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +10,6 @@ import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.data.redis.listener.KeyExpirationEventMessageListener;
 import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 import org.springframework.data.redis.serializer.RedisSerializationContext;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
@@ -40,12 +37,7 @@ public class RedisConfig {
         // value值的序列化采用 fastjson
         FastJsonRedisSerializer jsonRedisSerializer = new FastJsonRedisSerializer(Object.class);
         jsonRedisSerializer.getFastJsonConfig().setSerializerFeatures(SerializerFeature.WriteClassName);
-        ParserConfig.getGlobalInstance().addAccept("com.noah.build.alarm.model");//fastjson配置自动序列化实体类包
-        ParserConfig.getGlobalInstance().addAccept("com.noah.build.device.model");//fastjson配置自动序列化实体类包
-        ParserConfig.getGlobalInstance().addAccept("com.noah.build.elevator.model");//fastjson配置自动序列化实体类包
-        ParserConfig.getGlobalInstance().addAccept("com.noah.build.environment.model");//fastjson配置自动序列化实体类包
-        ParserConfig.getGlobalInstance().addAccept("com.noah.build.towercrane.model");//fastjson配置自动序列化实体类包
-        ParserConfig.getGlobalInstance().addAccept("com.noah.build.worker.model");//fastjson配置自动序列化实体类包
+        //ParserConfig.getGlobalInstance().addAccept("com.wx.alarm.model");//fastjson配置自动序列化实体类包
 
         template.setValueSerializer(jsonRedisSerializer);
         template.setHashValueSerializer(jsonRedisSerializer);

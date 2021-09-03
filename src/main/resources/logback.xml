@@ -1,7 +1,7 @@
 <configuration>
     <!--定义日志输出和存储路径-->
     <property name="LOG_PATTERN" value="%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n" />
-    <property name="FILE_PATH" value="D:/ideaPro/logs/build/build.%d{yyyy-MM-dd}.%i.log" />
+    <property name="FILE_PATH" value="D:/ideaPro/logs/wx/wx.%d{yyyy-MM-dd}.%i.log" />
     <!--<property name="FILE_PATH" value="/home/biyeyuan/app/datapro/logs/datapro.%d{yyyy-MM-dd}.%i.log" />-->
 
     <!--定义控制台输出-->
@@ -31,7 +31,7 @@
     </appender>
 
     <!--定义日志输出级别-->
-    <logger name="com.noah.build" level="INFO" />
+    <logger name="com.zkny.wx" level="INFO" />
     <root level="INFO">
         <appender-ref ref="CONSOLE" />
         <appender-ref ref="FILE" />

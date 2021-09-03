@@ -1,4 +1,4 @@
-package com.noah.build.utils;
+package com.zkny.wx.utils;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;

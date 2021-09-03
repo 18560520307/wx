@@ -1,5 +1,9 @@
 package com.zkny.wx.dto;
 
+import lombok.Data;
+
+import java.io.Serializable;
+
 /**
  * @ClassName: Text
  * @Description: 文本
@@ -7,5 +11,14 @@ package com.zkny.wx.dto;
  * @Date 2021/8/21
  * @Version 1.0
  */
-public class Text {
+@Data
+public class Text implements Serializable {
+    private String content;
+
+    public Text() {
+    }
+
+    public Text(String content) {
+        this.content = content;
+    }
 }
